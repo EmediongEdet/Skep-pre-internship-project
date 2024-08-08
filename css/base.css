@@ -46,6 +46,16 @@ a {
 
 
 
+
+/* HEADER */
+header {
+    position:fixed;
+    z-index: 1;
+    width: 100%;
+}
+
+
+
 /* ------------------------------------------------------------------------ */
 /* NAV BAR */
 /* ------------------------------------------------------------------------ */
@@ -56,6 +66,8 @@ nav {
     flex-wrap: nowrap;
     align-content: center;
     justify-content: space-between;
+    /* position:fixed;
+    z-index: 1; */
 }
 
 nav button, h4, img, input, a {
@@ -70,13 +82,32 @@ nav h1 {
     margin-top: 30px;
 }
 
-nav a {
-    margin-top: 20px;
-}
 
 #cartIcon {
     margin-left: 200px;
-    color: #FE7A36;
+    color: white;
+    margin-top: 20px;
+}
+
+#cartLink {
+    color: white;
+    font-size:200%;
+    margin-top: 10px;
+    margin-left: -80px;
+}
+
+#hamburgerButton {
+    height: 60px;
+    width: 80px;
+    margin-top: 15px;
+    border-radius: var(---border-radius);
+    transition: width 2s;
+}
+
+#hamburgerButton:hover {
+    background-color: #FE7A36;
+    width: 150px;
+    cursor: pointer;
 }
 
 
@@ -139,7 +170,7 @@ main {
     grid-template-columns: repeat(3, 1fr);
     padding: var(---padding);
     /* border: var(---border); */
-    margin-top: 30px;
+    margin-top: 150px;
     grid-gap: 10px;
     height: auto;
 }
@@ -292,6 +323,7 @@ footer {
 
 .handles h1 {
     margin-top: 50px;
+    margin-left: 20px;
 }
 
 .handles input {
@@ -308,10 +340,12 @@ footer {
     cursor: pointer;
     border-radius: var(---border-radius);
     box-shadow: 10px 10px 8px black;
+    transition: width 2s;
 }
 
 .handles button:hover {
     background-color: #FE7A36;
+    width: 250px;
 }
 
 .footerNav {
