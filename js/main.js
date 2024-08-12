@@ -1,3 +1,3 @@
-function func1 () {
-    $("#productImage").fadeToggle();
+function fadeToggle () {
+    $("#productImage").fadeToggle(2000);
 }
