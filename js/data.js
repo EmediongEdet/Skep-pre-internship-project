@@ -145,6 +145,9 @@ document.addEventListener("DOMContentLoaded", function () {
     customerReviewHTML.append(customerReviewDiv);
   }
 
+  // --------------------------------------------------------------------------------------
+  // Function to build the customer reviews
+  // -----------------------------------------------------------------------------------------
   function nextItem(data) {
     currentIndex++; // Increment the index
     if (currentIndex >= data.products.length) {
