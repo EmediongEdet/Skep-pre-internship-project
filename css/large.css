@@ -68,35 +68,64 @@
         flex-wrap: nowrap;
         align-content: center;
         justify-content: space-between;
-        /* position:fixed;
-        z-index: 1; */
     }
     
     nav button, h4, img, input, a {
         padding: 20px;
     }
-    
+
+    nav a {
+        color: black;
+    }
+
+    .cart {
+        height: 60px;
+        width: 200px;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        /* text-align: center; */
+        color: white;
+        background-color: var(---primary-color);
+        /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); */
+    }
+
+    .cart a {
+        color: white;
+    }
+
+    .cart-item {
+        font-size: small;
+        background-color: var(---primary-color);
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+        padding: var(---padding);
+        color: white;
+        /* margin-top: 50px; */
+    }
+
+    .cart-item p {
+        margin-top: 2px;
+    }
+
+    #cartLink {
+        margin-top: 20px;
+        margin-left: -100px;
+        font-size: x-large;
+        color: white;
+    }
+
+    #cartIcon {
+        font-size: x-large;
+        margin-left: 20px;
+        color: white;
+    }
+  
     nav img {
         width: 100px;
     }
     
-    /* nav a {
-        margin-top: 10px;
-    } */
-    
-    
-    #cartIcon {
-        margin-left: 50px;
-        color: white;
-        margin-top: 20px;
-    }
-    
-    #cartLink {
-        color: white;
-        font-size:200%;
-        margin-top: 10px;
-        margin-left: -80px;
-    }
+
     
     #hamburgerButton {
         height: 60px;
@@ -180,26 +209,7 @@
         height: auto;
     }
 
-    .cartMain {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        padding: var(---padding);
-        margin-top: 150px;
-        grid-gap: 10px;
-        height: 500px;
-        border: var(---border);
-    }
 
-    .cartIcon2 {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        padding: var(---padding);
-        margin-top: 150px;
-        grid-gap: 10px;
-        height: 250px;
-        width: 200px;
-        border: var(---border);
-    }
 
 
 
@@ -363,10 +373,9 @@
 
     .reviews {
         display: grid;
-        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-gap: 2px;
         grid-column: 2/4;
-        text-align: center;
         grid-row: 4;
         width: auto;
         padding: 20px;
@@ -374,76 +383,38 @@
     }
     
     
-    .reviewsHeading {
+    .reviews h2 {
         grid-column: 1/5;
         grid-row: 1;
         width: 100%;
         text-align: center;
     }
-    
-    .customer1Img {
-        grid-column: 1;
-        grid-row: 2;
-        height: 50px;
-        width: 80px;
-        box-shadow: 10px 10px 8px #bbb;
-        border-radius: 15px 50px 30px;
-        border: 1px solid #FE7A36;
+
+    .review-image {
+        border-radius: 50%;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+        padding: 10px;
     }
-    
-    .customer2Img {
-        grid-column: 1;
-        grid-row: 3;
-        height: 50px;
-        width: 80px;
-        box-shadow: 10px 10px 8px #bbb;
-        border-radius: 15px 50px 30px;
-        border: 1px solid #FE7A36;
+
+    .review-item p {
+        grid-row: 1;
+        grid-column: 2;
     }
-    
-    .customer3Img {
-        grid-column: 1;
-        grid-row: 4;
-        height: 50px;
-        width: 80px;
-        box-shadow: 10px 10px 8px #bbb;
-        border-radius: 15px 50px 30px;
-        border: 1px solid #FE7A36;
+
+    .review-item strong {
+        font-size: large;
     }
-    
-    .customer1 {
-        padding: var(---padding);
-        grid-column: 2/5;
-        text-align: left;
-        grid-row: 2;
-        height: 60px;
-        width: auto;
-    }
-    
-    .customer2 {
-        padding: var(---padding);
-        grid-column: 2/5;
-        grid-row: 3;
-        height: 60px;
-        width: auto;
-        text-align: left;
-    }
-    
-    
-    .customer3 {
-        padding: var(---padding);
-        grid-column: 2/5;
-        grid-row: 4;
-        height: 60px;
-        width: auto;
-        text-align: left;
-    }
-    
-    
-    
+
     .reviews img {
-        height: 60px;
+        height: 80px;
+        width: 80px;
     }
+
+    .review-item {
+        text-align: left;
+    }
+    
+
     
     
     

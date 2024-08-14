@@ -20,8 +20,10 @@
                 <input type="text" placeholder="search" id="searchInput">
                 <i class="fa fa-solid fa-magnifying-glass" id="magnifyingGlass"></i>
                 <button id="searchButton">Search</button>
-                <a href="#" id="cartIcon"><i class="fa-solid fa-cart-shopping"></i></a>
-                <a href="cart.html" id="cartLink">Cart</a>
+                <div class="cart">
+                    <div id="cartIcon"><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></div>
+                    <div id="cartLink"><a href="#">Cart</a></div>
+                </div>
             </nav>
         </div>
     </header>
@@ -31,22 +33,12 @@
                 <div class="productDetails"></div>
                 <div class="productImage"></div>
                 <div class="mainSubmitButton"><button id="mainSubmitButton"><strong>ADD TO CART</strong></button></div>
-                <div class="nextButton"><button onclick="" type="submit" id="nextButton"><strong>NEXT</strong></button></div>
+                <div class="nextButton"><button  id="nextButton"><strong>NEXT</strong></button></div>
             </div>
             <div class="productDescription"></div>
             <div class="productReview"><textarea name="userReview" id="userReview" placeholder="Type your message here"></textarea></div>
-            <div class="submitReview"><button id="reviewButton" value="Submit Review"><strong>SUBMIT REVIEW</strong></button></div>
+            <div class="submitReview"><button onclick="alert(`Thank you! Your review has been received.`)" id="reviewButton" value="Submit Review"><strong>SUBMIT REVIEW</strong></button></div>
             <div class="reviews">
-                <div class="reviewsHeading"><h2>Customer Reviews</h2></div>
-                <div class="customer1Img"><img src="images/customer1.png" alt="customer image"></div>
-                <div class="customer1"><p>We are very grateful to the Jumia 
-                    platform for helping us to better</p></div>
-                <div class="customer2Img"><img src="images/customer1.png" alt="customer image"></div>
-                <div class="customer2"><p>We are very grateful to the Jumia 
-                    platform for helping us to better hkafhFkds usfggdffdgfydf kadjsadjfaskdjs asdnsakjkaskd</p></div>
-                <div class="customer3Img"><img src="images/customer1.png" alt="customer image"></div>
-                <div class="customer3"><p>We are very grateful to the Jumia 
-                    platform for helping us to better</p> </div>
             </div>
         </div>
     </main>
@@ -55,8 +47,8 @@
             <div class="handles">
                 <h1>HandMade Crafts</h1>
                 <img src="images/Logo.png" alt="Logo Image" id="footerImage">
-                <input type="text" placeholder="Enter Email Address">
-                <button type="submit" id="footerSubmitButton" value="Submit">Submit</button>
+                <input type="text" placeholder="Enter Email Address" required="required">
+                <button onclick="alert(`Success`)" type="submit" id="footerSubmitButton" value="Submit">Submit</button>
                 <a href="#"><img src="images/facebook.png" alt="Facebook Image" id="facebookImg"></a>
                 <a href="#"><img src="images/linkedin.png" alt="Linkedin Image" id="linkedinImg"></a>
                 <a href="#"><img src="images/twitter.png" alt="Twitter Image" id="twitterImg"></a>

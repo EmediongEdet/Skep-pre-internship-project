@@ -73,19 +73,19 @@
    "customerReviews": [
        {"customer1": {
            "customerID": 1,
-           "customerImage": "images/customer.jpg",
+           "customerImage": "images/customer2.png",
            "customerName": "Fedrick Thomas",
            "review": "Exceptional craftsmanship and unique designs—every piece feels like a work of art. A true gem in the world of handmade products!"
        },
        "customer2": {
            "customerID": 2,
-           "customerImage": "images/customer.jpg",
+           "customerImage": "images/customer3.png",
            "customerName": "Samuel Jackson",
            "review": "Amazing quality and attention to detail! The handcrafted items from this startup bring warmth and character to my home."
        },
        "customer3": {
            "customerID": 2,
-           "customerImage": "images/customer.jpg",
+           "customerImage": "images/customer4.png",
            "customerName": "Ben Emerson",
            "review": "Impressive service and stunning products. The perfect place to find one-of-a-kind, artisan-made pieces that stand out."
        }
