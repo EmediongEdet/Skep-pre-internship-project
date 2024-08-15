@@ -54,6 +54,7 @@
         position:fixed;
         z-index: 1;
         width: 100%;
+        font-family: "Lato", sans-serif;
     }
     
     
@@ -90,6 +91,11 @@
         font-size: large;
         text-align: center;
         padding: 2px;
+    }
+
+    .total-price {
+        border-top: 1px solid black;
+        margin-top: 15px;
     }
 
     #cartIcon {
@@ -206,6 +212,7 @@
         margin-top: 150px;
         grid-gap: 10px;
         height: auto;
+        font-family: "Lato", sans-serif;
     }
 
 
@@ -432,6 +439,7 @@
     footer {
         /* padding: var(---padding); */
         height: auto;
+        font-family: "Lato", sans-serif;
     }
     
     .footer {
@@ -548,7 +556,7 @@
         width: 700px; /* Full width */
         height: 100%; /* Full height */
         overflow: auto; 
-        
+        font-family: "Lato", sans-serif;
     }
     
     /* Modal Content */

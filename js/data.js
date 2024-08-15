@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let product = data.products[index];
 
     productDetailsH2.innerHTML = `Name: ${product.productName}`;
-    productDetailsp1.innerHTML = `<strong>Price:</strong> ${product.productPrice}`;
+    productDetailsp1.innerHTML = `<strong>Price:</strong> #${product.productPrice}`;
     productDetailsp2.innerHTML = `<strong>Number in Stock:</strong> ${product.productStock}`;
     ProductDetailsp3.innerHTML = `<strong>Variation:</strong> ${product.productVariation}`;
 
@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const totalPrice = cart.reduce((total, item) => total + (item.productPrice * item.quantity), 0);
     console.log(`Total Price: ${totalPrice}`)
     const totalPriceDisplay = document.createElement("p");
-    totalPriceDisplay.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+    totalPriceDisplay.textContent = `Total Price: #${totalPrice.toFixed(2)}`;
     totalPriceDisplay.classList.add("total-price");
     
     quantityHTML.appendChild(totalQuantityDisplay);
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
       itemName.textContent = `Name: ${item.productName}`;
 
       const itemPrice = document.createElement("p");
-      itemPrice.textContent = `Price: $${parseFloat(item.productPrice).toFixed(2)}`;
+      itemPrice.textContent = `Price: #${parseFloat(item.productPrice).toFixed(2)}`;
 
       const itemImage = document.createElement("img");
       itemImage.setAttribute("src", item.productImage);
