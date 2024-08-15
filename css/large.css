@@ -78,47 +78,46 @@
         color: black;
     }
 
-    .cart {
-        height: 60px;
-        width: 200px;
-        margin-top: 20px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        /* text-align: center; */
+    .total-quantity {
+        position: relative;
+        height: 30px;
+        width: 30px;
+        margin-top: -70px;
+        margin-left: 40px;
+        border-radius: 50%;
+        background-color: black;
         color: white;
-        background-color: var(---primary-color);
-        /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); */
-    }
-
-    .cart a {
-        color: white;
-    }
-
-    .cart-item {
-        font-size: small;
-        background-color: var(---primary-color);
-        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-        padding: var(---padding);
-        color: white;
-        /* margin-top: 50px; */
-    }
-
-    .cart-item p {
-        margin-top: 2px;
-    }
-
-    #cartLink {
-        margin-top: 20px;
-        margin-left: -100px;
-        font-size: x-large;
-        color: white;
+        font-size: large;
+        text-align: center;
+        padding: 2px;
     }
 
     #cartIcon {
-        font-size: x-large;
-        margin-left: 20px;
+        font-size: xx-large;
+        right: 10px;
+        bottom: 18px;
         color: white;
+        position: relative;
+    }
+
+    #cartIcon i {
+        font-size: xx-large;
+    }
+
+    #cartIcon i {
+        margin-right: 10px;
+        margin-top: 13px;
+    }
+
+    #cartIcon button {
+        height: 80px;
+        width: 80px;
+        border-radius: var(---border-radius);
+    }
+
+    #cartIcon button:hover {
+        background-color: #FE7A36;
+        cursor: pointer;
     }
   
     nav img {
@@ -183,7 +182,7 @@
     #magnifyingGlass {
         display: inline;
         position: absolute;
-        left: 650px;
+        left: 700px;
         top: 60px;
     }
     
@@ -245,6 +244,10 @@
         grid-column: 2;
         grid-row: 1/2;
         box-shadow: none;
+    }
+
+    .productDetails p {
+        font-size: x-large;
     }
 
     .mainSubmitButton {
@@ -319,6 +322,11 @@
     .productDescription img {
         width: 300px;
     }
+
+    .productDescription p{
+        font-size: x-large;
+        margin-top: 20px;
+    }
     
     
 
@@ -372,8 +380,8 @@
 
 
     .reviews {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-direction: column;
         grid-gap: 2px;
         grid-column: 2/4;
         grid-row: 4;
@@ -397,8 +405,7 @@
     }
 
     .review-item p {
-        grid-row: 1;
-        grid-column: 2;
+        font-size: 18px;
     }
 
     .review-item strong {
@@ -408,10 +415,11 @@
     .reviews img {
         height: 80px;
         width: 80px;
+        margin-top: 15px;
     }
 
     .review-item {
-        text-align: left;
+        text-align: center;
     }
     
 
@@ -464,7 +472,8 @@
     
     
     #footerImage {
-        height: 100px;
+        height: 90px;
+        width: 90px;
         margin-top: 20px;
     }
     
@@ -523,4 +532,99 @@
         grid-row: 2;
     }
 
+
+
+
+
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 850px;
+        top: 0;
+        color: black;
+        width: 700px; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; 
+        
+    }
+    
+    /* Modal Content */
+    .modal-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: auto;
+        color: black;
+        padding: 0;
+        border: 1px solid #888;
+        width: 80%;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s
+    }
+    
+    /* Add Animation */
+    @-webkit-keyframes animatetop {
+        from {top:-300px; opacity:0} 
+        to {top:0; opacity:1}
+    }
+    
+    @keyframes animatetop {
+        from {top:-300px; opacity:0}
+        to {top:0; opacity:1}
+    }
+    
+    /* The Close Button */
+    .close {
+        color: white;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    .modal-header {
+        padding: 2px 16px;
+        background-color: var(---primary-color);
+        color: black;
+        height: 50px;
+    }
+    
+    .modal-body {
+        padding: var(---padding);
+        color: black;
+    }
+
+    .modal-body img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .modal-body p {
+        text-align: left;
+        font-weight: 800;
+    }
+
+    .modal-item {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        margin-top: 10px;
+        padding: 20px;
+    }
+
+  
 }
+
+
+
+
+

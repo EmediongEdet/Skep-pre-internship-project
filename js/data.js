@@ -5,16 +5,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const productDescriptionHTML = document.querySelector(".productDescription");
   const productImageHTML = document.querySelector(".productImage");
   const mainSubmitButtonHTML = document.querySelector("#mainSubmitButton");
-  const cartDisplayHTML = document.querySelector("#cartLink");
+  const cartDisplayHTML = document.querySelector(".modal-body");
   const customerReviewHTML = document.querySelector(".reviews");
-  const nextButton = document.querySelector("#nextButton");
+  const quantityHTML = document.querySelector(".quantity");
 
   let cart = [];
   let currentIndex = 0;
 
-  // -----------------------------------------------------------------------------------------------
-  // Asynchronous function to get data
-  // -----------------------------------------------------------------------------------------------
   async function getData() {
     let response = await fetch(requestURL);
     if (response.ok) {
@@ -34,9 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   getData();
 
-  // -----------------------------------------------------------------------------------------------
-  // Function to build the product details
-  // -----------------------------------------------------------------------------------------------
   function buildProductDetails(data, index) {
     produDetailsHTML.innerHTML = "";
     const productDetailsDiv = document.createElement("div");
@@ -58,9 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
     produDetailsHTML.append(productDetailsDiv);
   }
 
-  // -----------------------------------------------------------------------------------------------
-  // Function to build the product Image
-  // -----------------------------------------------------------------------------------------------
   function buildProductImage(data, index) {
     productImageHTML.innerHTML = "";
     const productImageDiv = document.createElement("div");
@@ -74,9 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
     productImageHTML.append(productImageDiv);
   }
 
-  // -----------------------------------------------------------------------------------------------
-  // Function to build the product Description
-  // -----------------------------------------------------------------------------------------------
   function buildProductDescription(data, index) {
     productDescriptionHTML.innerHTML = "";
     const productDescriptionDiv = document.createElement("div");
@@ -109,12 +97,8 @@ document.addEventListener("DOMContentLoaded", function () {
     productDescriptionHTML.append(productDescriptionDiv);
   }
 
-
-  // -----------------------------------------------------------------------------------------------
-  // Function to build the customer reviews
-  // -----------------------------------------------------------------------------------------------
   function buildCustomerReview(data) {
-    customerReviewHTML.innerHTML = ""; // Clear previous reviews
+    customerReviewHTML.innerHTML = ""; 
     const customerReviewDiv = document.createElement("div");
     customerReviewDiv.classList.add("review-item");
 
@@ -145,26 +129,21 @@ document.addEventListener("DOMContentLoaded", function () {
     customerReviewHTML.append(customerReviewDiv);
   }
 
-  // --------------------------------------------------------------------------------------
-  // Function to build the customer reviews
-  // -----------------------------------------------------------------------------------------
   function nextItem(data) {
-    currentIndex++; // Increment the index
+    currentIndex++;
     if (currentIndex >= data.products.length) {
-      currentIndex = 0; // Loop back to the first item
+      currentIndex = 0;
     }
-    // Update the display with the next item
     buildProductDescription(data, currentIndex);
     buildProductDetails(data, currentIndex);
     buildProductImage(data, currentIndex);
   }
 
-
-  // -----------------------------------------------------------------------------------------------
-  // Function to add a product to the cart
-  // -----------------------------------------------------------------------------------------------
   function addToCart(data) {
     const selectedProduct = data.products[currentIndex];  
+
+    const price = parseFloat(selectedProduct.productPrice) || 0;
+    selectedProduct.productPrice = price;
 
     let existingItem = cart.find(cartItem => cartItem.productName === selectedProduct.productName);
 
@@ -180,39 +159,54 @@ document.addEventListener("DOMContentLoaded", function () {
     updateCartDisplay();
   }
 
-
-
-  //-------------------------------------------------------------------------------------------
-  // Function to update the cart display
-  // ------------------------------------------------------------------------------------------
   function updateCartDisplay() {
-    console.log("Cart:", cart);
-
-    // Clear previous cart display
     cartDisplayHTML.innerHTML = "";
+    quantityHTML.innerHTML = "";
+
+    // Calculate total quantity of all items
+    const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
+
+    // Create and display the total quantity at the top
+    const totalQuantityDisplay = document.createElement("p");
+
+    totalQuantityDisplay.textContent = `${totalQuantity}`;
+    totalQuantityDisplay.classList.add("total-quantity");
+
+    const totalPrice = cart.reduce((total, item) => total + (item.productPrice * item.quantity), 0);
+    console.log(`Total Price: ${totalPrice}`)
+    const totalPriceDisplay = document.createElement("p");
+    totalPriceDisplay.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+    totalPriceDisplay.classList.add("total-price");
+    
+    quantityHTML.appendChild(totalQuantityDisplay);
 
     // Loop through each item in the cart and display it
     cart.forEach(item => {
       const cartItemDiv = document.createElement("div");
-      cartItemDiv.classList.add("cart-item");
+      cartItemDiv.classList.add("modal-item");
 
       const itemName = document.createElement("p");
       itemName.textContent = `Name: ${item.productName}`;
 
       const itemPrice = document.createElement("p");
-      itemPrice.textContent = `Price: ${item.productPrice}`;
+      itemPrice.textContent = `Price: $${parseFloat(item.productPrice).toFixed(2)}`;
+
+      const itemImage = document.createElement("img");
+      itemImage.setAttribute("src", item.productImage);
+      itemImage.setAttribute("alt", `Image of ${item.productName}`);
 
       const itemQuantity = document.createElement("p");
-      itemQuantity.textContent = `Quantity: ${item.quantity || 1}`;
+      itemQuantity.textContent = `Quantity: ${item.quantity}`;
 
-      // Append the item details to the cart item div
+      cartItemDiv.appendChild(itemImage);
       cartItemDiv.appendChild(itemName);
       cartItemDiv.appendChild(itemPrice);
       cartItemDiv.appendChild(itemQuantity);
+      cartItemDiv.appendChild(totalPriceDisplay)
 
-      // Append the cart item div to the cart display area
       cartDisplayHTML.appendChild(cartItemDiv);
     });
   }
 
 });
+
