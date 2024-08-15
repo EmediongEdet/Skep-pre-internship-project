@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     productImage.setAttribute("src", product.productImage);
     productImage.setAttribute("alt", `Image of ${product.productName}`);
+    // productImage.setAttribute("data-src", product.placeholderImage);
 
     productImageDiv.append(productImage);
     productImageHTML.append(productImageDiv);
