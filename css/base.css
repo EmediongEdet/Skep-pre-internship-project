@@ -482,15 +482,15 @@ footer {
 
  /* The Modal (background) */
  .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
     left: 2px;
     top: 0;
     color: black;
-    width: 300px; /* Full width */
-    height: 100%; /* Full height */
+    width: 300px; 
+    height: 100%;
     overflow: auto; 
     font-family: "Lato", sans-serif;
 }
@@ -498,7 +498,7 @@ footer {
 /* Modal Content */
 .modal-content {
     position: relative;
-    background-color: #fefefe;
+    /* background-color: #fefefe; */
     margin: auto;
     color: black;
     padding: 0;
@@ -563,4 +563,5 @@ footer {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     margin-top: 10px;
     padding: 20px;
+    background-color: black;
 }
