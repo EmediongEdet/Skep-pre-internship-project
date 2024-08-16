@@ -75,27 +75,71 @@ nav button, h4, img, input, a {
 }
 
 nav img {
-    width: 60px;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    left: -170px;
 }
 
 nav h1 {
     margin-top: 10px;
     text-decoration: none;
+    color: black;
+    font-size: small;
+    margin-left: 50px;
+}
+
+.total-quantity {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    margin-top: -70px;
+    margin-left: 40px;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    font-size: large;
+    text-align: center;
+    padding: 2px;
+}
+
+.total-price {
+    border-top: 1px solid black;
+    margin-top: 15px;
 }
 
 
 #cartIcon {
-    /* margin-left: 100px; */
+    right: 30px;
     color: white;
-    margin-top: 20px;
+    margin-top: 10px;
+    position: relative;
 }
 
-#cartLink {
-    color: white;
-    /* font-size:100%; */
-    margin-top: 30px;
-    /* margin-left: -80px; */
+
+#cartIcon i {
+    font-size: x-large;
 }
+
+#cartIcon i {
+    margin-left: -10px;
+    margin-top: 5px;
+}
+
+#cartIcon button {
+    height: 60px;
+    width: 60px;
+    border-radius: var(---border-radius);
+}
+
+#cartIcon button:hover {
+    background-color: #FE7A36;
+    cursor: pointer;
+}
+
+
+
+
 
 #hamburgerButton {
     height: 40px;
@@ -103,6 +147,7 @@ nav h1 {
     margin-top: 15px;
     border-radius: var(---border-radius);
     transition: width 2s;
+    display: none;
 }
 
 #hamburgerButton:hover {
@@ -165,7 +210,7 @@ nav h1 {
 /* MAIN */
 /* -------------------------------------------------------------------------- */
 main {
-    padding: var(---padding);
+    padding: 2px;
     height: auto;
     width: 100%;
 }
@@ -192,14 +237,20 @@ main {
 .productDescription {
     height: auto;
     padding: var(---padding);
+    text-align: center;
 }
 
 .productDescription h1 {
     margin-top: 20px;
+    font-size: large;
 }
 
 .productDescription img {
-    width: 100px;
+    width: 80px;
+}
+
+.productDescription p {
+    margin-top: 20px;
 }
 
 .mainSubmitButton {
@@ -222,14 +273,37 @@ main {
     color: white;
 }
 
+.nextButton {
+    padding: var(---padding);
+}
+
+#nextButton {
+    cursor: pointer;
+    width:100%;
+    height: 60px;
+    border: var(---input-border);
+    border-radius: var(---border-radius);
+    background-color: var(---primary-color);
+    color: white;
+    box-shadow: 10px 10px 8px #bbb;
+}
+
+#nextButton:hover {
+    background-color: var(---hover);
+    color: white;
+}
+
+
 .product img {
     width: 250px;
     box-shadow: 0, 0, 10px;
+    margin-left: 10px;
 }
 
 
 .productDetails {
     padding: var(---padding);
+    text-align: center;
     /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); */
 }
 
@@ -269,73 +343,31 @@ main {
     color: white;
 }
 
+
+
+
+
+
 .reviews {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
     grid-gap: 2px;
     padding: var(---padding);
+    text-align: left;
+    width: auto;
 }
 
 
-.reviewsHeading {
-    grid-column: 1/5;
-    grid-row: 1;
+.reviews h2 {
     width: 100%;
     text-align: center;
 }
 
-.customer1Img {
-    grid-column: 1;
-    grid-row: 2;
-    height: 50px;
-    width: 80px;
-    box-shadow: 10px 10px 8px #bbb;
-    border-radius: 15px 50px 30px;
-    border: 1px solid #FE7A36;
+.review-image {
+    border-radius: 50%;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    padding: 10px;
 }
-
-.customer2Img {
-    grid-column: 1;
-    grid-row: 3;
-    height: 50px;
-    width: 80px;
-    box-shadow: 10px 10px 8px #bbb;
-    border-radius: 15px 50px 30px;
-    border: 1px solid #FE7A36;
-}
-
-.customer3Img {
-    grid-column: 1;
-    grid-row: 4;
-    height: 50px;
-    width: 80px;
-    box-shadow: 10px 10px 8px #bbb;
-    border-radius: 15px 50px 30px;
-    border: 1px solid #FE7A36;
-}
-
-.customer1 {
-    padding: var(---padding);
-    grid-column: 2;
-    grid-row: 2;
-    height: 60px;
-}
-
-.customer2 {
-    padding: var(---padding);
-    grid-column: 2;
-    grid-row: 3;
-    height: 60px;
-}
-
-
-.customer3 {
-    padding: var(---padding);
-    grid-column: 2;
-    grid-row: 4;
-    height: 60px;
-}
-
 
 
 .reviews img {
@@ -371,11 +403,12 @@ footer {
 }
 
 .handles img {
-    width: 100px;
+    width: 90px;
+    height: 90px;
 }
 
 #facebookImg {
-    margin-left: -50px;
+    margin-left: -60px;
 }
 
 #linkedinImg {
@@ -388,13 +421,16 @@ footer {
 
 #footerImage {
     width: 80px;
+    height: 90px;
     margin-top: 20px;
+    position: relative;
+    right: 120px;
 }
 
 .handles h1 {
     margin-top: 50px;
-    margin-left: 0px;
-    font-size: small;
+    margin-left: 60px;
+    font-size: x-small;
 }
 
 .handles input {
@@ -423,10 +459,108 @@ footer {
 
 .footerNav {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: var(---primary-color);
     padding: var(---padding);
     border: var(---border);
     margin-top: 20px;
-    height: 200px;
+    height: 100px;
+    text-align: center;
+}
+
+#skep {
+    border-top: 1px solid black;
+    margin-top: 10px;
+    font-size: small;
+}
+
+#copyright {
+    font-size: small;
+    margin-top: 10px;
+}
+
+
+ /* The Modal (background) */
+ .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 2px;
+    top: 0;
+    color: black;
+    width: 300px; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; 
+    font-family: "Lato", sans-serif;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    color: black;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: var(---primary-color);
+    color: black;
+    height: 50px;
+}
+
+.modal-body {
+    padding: var(---padding);
+    color: black;
+}
+
+.modal-body img {
+    width: 50px;
+    height: 50px;
+}
+
+.modal-body p {
+    text-align: left;
+    font-weight: 800;
+}
+
+.modal-item {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    margin-top: 10px;
+    padding: 20px;
 }

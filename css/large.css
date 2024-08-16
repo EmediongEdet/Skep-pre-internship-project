@@ -79,6 +79,10 @@
         color: black;
     }
 
+    nav h1 {
+        font-size: xx-large;
+    }
+
     .total-quantity {
         position: relative;
         height: 30px;
@@ -101,7 +105,7 @@
     #cartIcon {
         font-size: xx-large;
         right: 10px;
-        bottom: 18px;
+        bottom: 3px;
         color: white;
         position: relative;
     }
@@ -113,6 +117,7 @@
     #cartIcon i {
         margin-right: 10px;
         margin-top: 13px;
+        margin-left: 0px;
     }
 
     #cartIcon button {
@@ -128,6 +133,9 @@
   
     nav img {
         width: 100px;
+        height: 90px;
+        position: relative;
+        left: 0px;
     }
     
 
@@ -138,6 +146,7 @@
         margin-top: 15px;
         border-radius: var(---border-radius);
         transition: width 2s;
+        display: inline;
     }
     
     #hamburgerButton:hover {
@@ -188,7 +197,7 @@
     #magnifyingGlass {
         display: inline;
         position: absolute;
-        left: 700px;
+        left: 750px;
         top: 60px;
     }
     
@@ -242,6 +251,7 @@
     .productImage img {
         width: 400px;
         box-shadow: 0, 0, 10px;
+        margin-left: 0px;
     }
 
         
@@ -251,6 +261,7 @@
         grid-column: 2;
         grid-row: 1/2;
         box-shadow: none;
+        text-align: left;
     }
 
     .productDetails p {
@@ -285,7 +296,6 @@
     .nextButton {
         grid-column: 1/2;
         grid-row: 5;
-        /* border: var(---border); */
         padding: var(---padding);
     }
 
@@ -317,6 +327,7 @@
         grid-row: 4/5;
         width: auto;
         display: inline;
+        text-align: left;
         height: auto;
         padding: var(---padding);
         box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
@@ -324,6 +335,7 @@
     
     .productDescription h1 {
         margin-top: 20px;
+        font-size: xx-large;
     }
 
     .productDescription img {
@@ -461,8 +473,10 @@
     }
     
     .handles img {
-        /* width: 100px; */
         display: inline;
+        height: 90px;
+        width: 90px;
+        margin-top: 20px;
     }
 
     
@@ -477,13 +491,12 @@
     #twitterImg {
         margin-left: 0px;
     }
-    
-    
+
     #footerImage {
-        height: 90px;
-        width: 90px;
-        margin-top: 20px;
+        position: relative;
+        right: 0px;
     }
+
     
     .handles h1 {
         margin-top: 50px;
@@ -516,13 +529,25 @@
     }
     
     .footerNav {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        display: flex;
+        flex-direction: column;
         background-color: var(---primary-color);
         padding: var(---padding);
         border: var(---border);
         margin-top: 20px;
-        height: 400px;
+        height: 200px;
+        text-align: center;
+    }
+
+    #skep {
+        border-top: 2px solid black;
+        margin-top: 30px;
+        font-size: xx-large;
+    }
+
+    #copyright {
+        font-size: x-large;
+        margin-top: 20px;
     }
     
     .about {
@@ -627,6 +652,54 @@
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
         margin-top: 10px;
         padding: 20px;
+    }
+
+
+
+
+
+    
+    .custom-alert {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    
+    .custom-alert-content {
+        background-color: #fefefe;
+        margin-left: 30rem;
+        margin-top: 20rem;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 400px;
+        border-radius: 8px;
+        position: relative;
+    
+    }
+    
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    #alertMessage {
+        color: #45a049;
     }
 
   

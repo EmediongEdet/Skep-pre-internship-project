@@ -1,20 +1,24 @@
-function alertMessage(message, scroll = true) {
-    const alert = document.createElement('div');
-    alert.classList.add('alert');
-    alert.innerHTML = `<p>${message}</p><span>X</span>`;
-    
-    alert.addEventListener('click', function(e) {
-        if(e.target.tagName == 'SPAN') {
-          main.removeChild(this);
-        }
-    })
-    const main = document.querySelector('main');
-    main.prepend(alert);
-  
-    if(scroll)
-      window.scrollTo(0,0);
-      setTimeout(()=>{
-        alert.style.display = "none"
-      }, 3000)
-  
-  }
+function alert () {
+  let alertBox =
+    document.getElementById("customAlertBox");
+  let alert_Message_container =
+    document.getElementById("alertMessage");
+  let custom_button =
+    document.querySelector(".mainSubmitButton");
+  let close_img =
+    document.querySelector(".close");
+  let body =
+    document.querySelector("body");
+
+  custom_button.addEventListener
+    ('click', function () {
+        alert_Message_container.innerHTML =
+            "You clicked the button";
+        alertBox.style.display = "block";
+    });
+
+  close_img.addEventListener
+    ('click', function () {
+        alertBox.style.display = "none";
+    });
+}
