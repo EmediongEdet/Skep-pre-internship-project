@@ -164,10 +164,8 @@ document.addEventListener("DOMContentLoaded", function () {
     cartDisplayHTML.innerHTML = "";
     quantityHTML.innerHTML = "";
 
-    // Calculate total quantity of all items
     const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
 
-    // Create and display the total quantity at the top
     const totalQuantityDisplay = document.createElement("p");
 
     totalQuantityDisplay.textContent = `${totalQuantity}`;
@@ -181,7 +179,6 @@ document.addEventListener("DOMContentLoaded", function () {
     
     quantityHTML.appendChild(totalQuantityDisplay);
 
-    // Loop through each item in the cart and display it
     cart.forEach(item => {
       const cartItemDiv = document.createElement("div");
       cartItemDiv.classList.add("modal-item");

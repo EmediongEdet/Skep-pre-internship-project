@@ -480,6 +480,13 @@ footer {
 }
 
 
+.footerNav a {
+    font-size: large;
+    margin-top: 10px;
+    color: black;
+}
+
+
  /* The Modal (background) */
  .modal {
     display: none; 
@@ -564,4 +571,48 @@ footer {
     margin-top: 10px;
     padding: 20px;
     background-color: black;
+}
+
+.wireframe {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 2px;
+}
+
+
+.wireframe img {
+    width: 300px;
+    height: 400px;
+    margin-left: -15px;
+}
+
+.wireframe-main {
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+    width: 100%;
+}
+
+
+.wireframe-desc {
+    height: 200px;
+    width: 100%;
+    padding: var(---padding);
+    margin-left: 0px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#small {
+    margin-top: 20px;
+}
+
+#small, #large {
+    font-size: small;
+}
+
+.wireframe-desc h1 {
+    text-align: center;
+    border-bottom: 1px solid black;
 }
