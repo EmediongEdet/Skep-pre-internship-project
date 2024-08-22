@@ -198,8 +198,9 @@ document.addEventListener("DOMContentLoaded", function () {
     updateCartDisplay();
   }
 
+
+  // This function removes an item from the cart
   function removeFromCart(productName) {
-    // Find the index of the product in the cart
     const productIndex = cart.findIndex(cartItem => cartItem.productName === productName);
 
     if (productIndex > -1) {
