@@ -464,7 +464,7 @@ footer {
     padding: var(---padding);
     border: var(---border);
     margin-top: 20px;
-    height: 100px;
+    height: 120px;
     text-align: center;
 }
 
@@ -482,7 +482,6 @@ footer {
 
 .footerNav a {
     font-size: small;
-    margin-top: 3px;
     color: black;
 }
 
