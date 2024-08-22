@@ -71,26 +71,26 @@
 
    
    "customerReviews": [
-       {
-           "customerID": 1,
-           "customerImage": "images/customer2.png",
-           "placeholderImage": "images/placeholder.png",
-           "customerName": "Fedrick Thomas",
-           "review": "Exceptional craftsmanship and unique designs—every piece feels like a work of art. A true gem in the world of handmade products!"
-       },
-       {
-           "customerID": 2,
-           "customerImage": "images/customer3.png",
-           "placeholderImage": "images/placeholder.png",
-           "customerName": "Samuel Jackson",
-           "review": "Amazing quality and attention to detail! The handcrafted items from this startup bring warmth and character to my home."
-       },
-       {
-           "customerID": 2,
-           "customerImage": "images/customer4.png",
-           "placeholderImage": "images/placeholder.png",
-           "customerName": "Ben Emerson",
-           "review": "Impressive service and stunning products. The perfect place to find one-of-a-kind, artisan-made pieces that stand out."
-       }
+        {
+            "customerID": 1,
+            "customerImage": "images/customer2.png",
+            "placeholderImage": "images/placeholder.png",
+            "customerName": "Moses Ette",
+            "review": "Beautiful features with nice interactivity!"
+        },
+        {
+            "customerID": 2,
+            "customerImage": "images/customer3.png",
+            "placeholderImage": "images/placeholder.png",
+            "customerName": "ThankGod Andrew",
+            "review": "Nice job with a beautiful UI. Good incoporation of SEO."
+        },
+        {
+            "customerID": 2,
+            "customerImage": "images/customer4.png",
+            "placeholderImage": "images/placeholder.png",
+            "customerName": "Ezekiel Jermiah",
+            "review": "Impressive service and stunning products. The interactivity is simple and easy to navigate."
+        }
     ]
 }

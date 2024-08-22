@@ -500,6 +500,8 @@ footer {
     height: 100%;
     overflow: auto; 
     font-family: "Lato", sans-serif;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
 }
 
 /* Modal Content */
@@ -507,7 +509,7 @@ footer {
     position: relative;
     /* background-color: #fefefe; */
     margin: auto;
-    color: black;
+    color: white;
     padding: 0;
     border: 1px solid #888;
     width: 80%;
@@ -553,7 +555,7 @@ footer {
 
 .modal-body {
     padding: var(---padding);
-    color: black;
+    color: white;
 }
 
 .modal-body img {
@@ -615,4 +617,18 @@ footer {
 .wireframe-desc h1 {
     text-align: center;
     border-bottom: 1px solid black;
+}
+
+.removeButton {
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    border: var(---input-border);
+    border-radius: var(---border-radius);
+    background-color:red;
+    color: white;
+    font-size: small;
+    text-align: center;
+    margin-top: 15px;
+    padding: 3px;
 }

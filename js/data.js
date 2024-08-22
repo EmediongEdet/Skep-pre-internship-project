@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   const requestURL = 'https://greenz081081.github.io/DataFiles/data/data.json';
-  const produDetailsHTML = document.querySelector(".productDetails");
+  const productDetailsHTML = document.querySelector(".productDetails");
   const productDescriptionHTML = document.querySelector(".productDescription");
   const productImageHTML = document.querySelector(".productImage");
   const mainSubmitButtonHTML = document.querySelector("#mainSubmitButton");
@@ -9,9 +9,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const customerReviewHTML = document.querySelector(".reviews");
   const quantityHTML = document.querySelector(".quantity");
 
+
   let cart = [];
   let currentIndex = 0;
 
+
+
+
+  // This is an asynchronous function that handles data retrieval from the server
   async function getData() {
     let response = await fetch(requestURL);
     if (response.ok) {
@@ -24,6 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       mainSubmitButtonHTML.addEventListener("click", () => addToCart(data));
       nextButton.addEventListener("click", () => nextItem(data));
+      removeButton.addEventListener("click", () => removeItem(data, itemId));
+      
     } else {
       throw Error(response.statusText);
     }
@@ -31,8 +38,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   getData();
 
+
+
+
+  // This function handles the building of the product details
   function buildProductDetails(data, index) {
-    produDetailsHTML.innerHTML = "";
+    // clears all the HTML content inside the productDetailsHTML element,
+    // ensuring that old or irrelevant content is removed before new content is inserted.
+    productDetailsHTML.innerHTML = "";
     const productDetailsDiv = document.createElement("div");
     let productDetailsH2 = document.createElement("h2");
     let productDetailsp1 = document.createElement("p");
@@ -49,10 +62,16 @@ document.addEventListener("DOMContentLoaded", function () {
     productDetailsDiv.append(productDetailsp1);
     productDetailsDiv.append(productDetailsp2);
     productDetailsDiv.append(ProductDetailsp3);
-    produDetailsHTML.append(productDetailsDiv);
+    productDetailsHTML.append(productDetailsDiv);
   }
 
+
+
+
+  // This function handles the building and generating of the product Image
   function buildProductImage(data, index) {
+    // clears all the HTML content inside the productImageHTML element,
+    // ensuring that old or irrelevant content is removed before new content is inserted.
     productImageHTML.innerHTML = "";
     const productImageDiv = document.createElement("div");
     let productImage = document.createElement('img');
@@ -66,7 +85,13 @@ document.addEventListener("DOMContentLoaded", function () {
     productImageHTML.append(productImageDiv);
   }
 
+
+
+
+  // This function handles the building and generating of the product description
   function buildProductDescription(data, index) {
+    // clears all the HTML content inside the produDescriptionHTML element,
+    // ensuring that old or irrelevant content is removed before new content is inserted.
     productDescriptionHTML.innerHTML = "";
     const productDescriptionDiv = document.createElement("div");
     let productDescriptionH1 = document.createElement("h1");
@@ -98,7 +123,13 @@ document.addEventListener("DOMContentLoaded", function () {
     productDescriptionHTML.append(productDescriptionDiv);
   }
 
+
+
+
+  // This function builds and generates the different customer reeviews
   function buildCustomerReview(data) {
+    // clears all the HTML content inside the customerReviewHTML element,
+    // ensuring that old or irrelevant content is removed before new content is inserted.
     customerReviewHTML.innerHTML = ""; 
     const customerReviewDiv = document.createElement("div");
     customerReviewDiv.classList.add("review-item");
@@ -107,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
     customerReviewDiv1.classList.add("reviewsHeading");
 
     let customerReviewHeading = document.createElement("h2");
-    customerReviewHeading.innerHTML = "Customer Reviews";
+    customerReviewHeading.innerHTML = "Reviews";
 
     data.customerReviews.forEach(review => {
       let customerReviewImage = document.createElement("img");
@@ -130,6 +161,10 @@ document.addEventListener("DOMContentLoaded", function () {
     customerReviewHTML.append(customerReviewDiv);
   }
 
+
+
+
+  // This function handles the navigation from one item to the other on the page
   function nextItem(data) {
     currentIndex++;
     if (currentIndex >= data.products.length) {
@@ -140,6 +175,9 @@ document.addEventListener("DOMContentLoaded", function () {
     buildProductImage(data, currentIndex);
   }
 
+
+
+  // This function handles to process of adding to cart
   function addToCart(data) {
     const selectedProduct = data.products[currentIndex];  
 
@@ -160,6 +198,19 @@ document.addEventListener("DOMContentLoaded", function () {
     updateCartDisplay();
   }
 
+  function removeFromCart(productName) {
+    // Find the index of the product in the cart
+    const productIndex = cart.findIndex(cartItem => cartItem.productName === productName);
+
+    if (productIndex > -1) {
+      cart.splice(productIndex, 1);
+      alert(`${productName} has been removed from the cart`);
+      updateCartDisplay();
+    }
+  }
+
+
+  // This function updates the cart UI after an item(s) has been added to the cart 
   function updateCartDisplay() {
     cartDisplayHTML.innerHTML = "";
     quantityHTML.innerHTML = "";
@@ -196,11 +247,17 @@ document.addEventListener("DOMContentLoaded", function () {
       const itemQuantity = document.createElement("p");
       itemQuantity.textContent = `Quantity: ${item.quantity}`;
 
+      const removeButton = document.createElement("button");
+      removeButton.textContent = "Remove Item";
+      removeButton.classList.add("removeButton");
+      removeButton.addEventListener("click", () => removeFromCart(item.productName));
+
       cartItemDiv.appendChild(itemImage);
       cartItemDiv.appendChild(itemName);
       cartItemDiv.appendChild(itemPrice);
       cartItemDiv.appendChild(itemQuantity);
       cartItemDiv.appendChild(totalPriceDisplay)
+      cartItemDiv.appendChild(removeButton)
 
       cartDisplayHTML.appendChild(cartItemDiv);
     });
